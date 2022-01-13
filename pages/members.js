@@ -1,22 +1,14 @@
 import Head from "next/head";
-import { useEffect } from "react";
 
-// export const getStaticProps = async () => {
+export const getStaticProps = async () => {
 
-//     const list = await fetch('https://jsonplaceholder.typicode.com/users');
-//     const res = await list.json();
-//     return {
-//         props: {res}
-//     }
-// }
-
-export  async function getServerSideProps() {
     const list = await fetch('https://jsonplaceholder.typicode.com/users');
     const res = await list.json();
     return {
         props: {res}
     }
-  }
+}
+
 
 export default function Members({res}) {
     
